@@ -48,7 +48,10 @@ public class StandardTurretScript : MonoBehaviour {
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation,lookRotation,Time.deltaTime * turret.attackSpeed ).eulerAngles;
         // fe hena 7aga msh fahmnha 
+        if (target.transform.position.y >5 )
         partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, 0f);
+        else
+            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
 
     }
