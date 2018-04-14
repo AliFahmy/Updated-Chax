@@ -31,7 +31,7 @@ public abstract class GroundEnemy : Enemy
     public GroundEnemy()
     {
         // erga3lha b3d ma t3mel class Game 3shan .... 
-        target = new Transform();
+       // target = new Transform();
         index = 0;
     }
 }

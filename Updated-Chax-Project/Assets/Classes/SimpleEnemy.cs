@@ -18,8 +18,4 @@ public class SimpleEnemy : Enemy {
         Health = Level * 100;
         KillReward = Level * 50;
     }
-    public override void move()
-    {
-        //implement 
-    }
 }
