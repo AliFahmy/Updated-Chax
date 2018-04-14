@@ -7,6 +7,7 @@ public abstract class Buildings  {
     private int Attack;
     private float Range;
     private int AttackSpeed;
+    public int Reloadtime;
     public int attackSpeed
     {
         get
@@ -43,9 +44,6 @@ public abstract class Buildings  {
     {
         Attack = 0;
         Range = 0.0f;
-    }
-    public virtual void Shot()
-    {
-
+        Reloadtime = 0;
     }
 }

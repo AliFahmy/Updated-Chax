@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _ : MonoBehaviour {
+public class MissleBulletScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

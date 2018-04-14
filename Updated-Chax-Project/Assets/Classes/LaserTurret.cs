@@ -13,8 +13,4 @@ public class LaserTurret : TurretsBuilding {
         Upgradecost = 200;
         level = 1;
     }
-    public override void Shot()
-    {
-        //implement shoot func
-    }
 }

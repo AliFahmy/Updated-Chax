@@ -7,9 +7,12 @@ public class StandardTurretScript : MonoBehaviour {
     public  Transform target;
     public float x;
     public Transform partToRotate;
-
+    public float ReloadTime;
+    public GameObject BulletPrefab;
+    public Transform FirePoint;
     private void Start()
     {
+        ReloadTime = 0;
         target = null;
         turret = new StandardTurret();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -52,10 +55,20 @@ public class StandardTurretScript : MonoBehaviour {
         partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, 0f);
         else
             partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-
+        if (ReloadTime <= 0f)
+        {
+            Shoot();
+            ReloadTime = 1f / turret.attackSpeed;
+        }
+        ReloadTime -= Time.deltaTime;
     }
-
+    void Shoot()
+    {
+         GameObject bullet =(GameObject)Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
+        StandardBulletScript B = bullet.GetComponent<StandardBulletScript>();
+        if (B != null)
+            B.seek(target); 
+    }
     private void OnDrawGizmosSelected()
     {
         
