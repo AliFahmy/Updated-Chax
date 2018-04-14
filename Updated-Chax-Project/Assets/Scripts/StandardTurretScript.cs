@@ -1,0 +1,64 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class StandardTurretScript : MonoBehaviour {
+    private StandardTurret turret;
+    public  Transform target;
+    public float x;
+    public Transform partToRotate;
+
+    private void Start()
+    {
+        target = null;
+        turret = new StandardTurret();
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
+    //gets the nearest target within our range (if exist )
+    private void UpdateTarget()
+    {
+       
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        float shortestdistance = Mathf.Infinity;
+        GameObject nearestenemy = null;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distancetocurrent = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distancetocurrent<shortestdistance)
+            {
+                 shortestdistance = distancetocurrent ;
+                nearestenemy = enemy;
+            }
+
+        }
+        Debug.Log(turret.range.ToString());
+        if (nearestenemy !=null && shortestdistance <=turret.range )
+        {
+            target = nearestenemy.transform;
+        }
+    }
+
+    private void Update()
+    {
+        if (target == null)
+            return;
+        // rotate for the target
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation,lookRotation,Time.deltaTime * turret.attackSpeed ).eulerAngles;
+        // fe hena 7aga msh fahmnha 
+        partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, 0f);
+
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, turret.range);
+
+
+    }
+}

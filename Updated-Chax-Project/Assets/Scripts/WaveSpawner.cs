@@ -14,7 +14,8 @@ public class WaveSpawner : MonoBehaviour
     public float TimeBetweenWaves=20f;
     private float countdown=2f;
     public static int wavenumber=1;
-    public Transform SpawnPoint;
+    public Transform GroundSpawnPoint;
+    public Transform FlyingSpawnPoint;
     void Update()
     {
         if (countdown <= 0)
@@ -28,23 +29,27 @@ public class WaveSpawner : MonoBehaviour
     {
         for(int i = 0; i < wavenumber; i++)
         {
-            SpawnEnemy(SimpleEnemyPrefab);
+            SpawnGroundEnemy(SimpleEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
         for (int i = 0; i < wavenumber /2; i++)
         {
-            SpawnEnemy(ToughEnemyPrefab);
+            SpawnGroundEnemy(ToughEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
         for (int i = 0; i < wavenumber/5; i++)
         {
-            SpawnEnemy(FlyEnemyPrefab);
+            SpawnFlyingEnemy(FlyEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
         wavenumber++;
     }
-    void SpawnEnemy(GameObject tospawn)
+    void SpawnGroundEnemy(GameObject tospawn)
     {
-        Instantiate(tospawn , SpawnPoint.position,SpawnPoint.rotation);
+        Instantiate(tospawn , GroundSpawnPoint.position, GroundSpawnPoint.rotation);
+    }
+    void SpawnFlyingEnemy(GameObject tospawn)
+    {
+        Instantiate(tospawn, FlyingSpawnPoint.position, FlyingSpawnPoint.rotation);
     }
 }
