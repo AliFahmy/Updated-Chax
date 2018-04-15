@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField]
@@ -10,6 +10,8 @@ public class WaveSpawner : MonoBehaviour
     private GameObject ToughEnemyPrefab;
     [SerializeField]
     private GameObject FlyEnemyPrefab;
+
+    public Text leftfornextround;
 
     public float TimeBetweenWaves=20f;
     private float countdown=2f;
@@ -23,6 +25,7 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(SpawnWave());
             countdown = TimeBetweenWaves;
         }
+        leftfornextround.text = (Mathf.Ceil( countdown ) ).ToString();
         countdown -= Time.deltaTime;
     }
      IEnumerator SpawnWave()

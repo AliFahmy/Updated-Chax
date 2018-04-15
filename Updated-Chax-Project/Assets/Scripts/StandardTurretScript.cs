@@ -49,13 +49,20 @@ public class StandardTurretScript : MonoBehaviour {
         // rotate for the target
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation,lookRotation,Time.deltaTime * turret.attackSpeed ).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation,lookRotation,Time.deltaTime * turret.RotationSpeed ).eulerAngles;
         // fe hena 7aga msh fahmnha 
         if (target.transform.position.y >5 )
-        partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, 0f);
+        {
+            //3shan ybos 3la el fly
+            partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, 0f);
+        }
         else
+        {
+            //3shan ybos 3la el ground
             partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-        if (ReloadTime <= 0f)
+        }
+        
+        if (ReloadTime <= 0f )
         {
             Shoot();
             ReloadTime = 1f / turret.attackSpeed;

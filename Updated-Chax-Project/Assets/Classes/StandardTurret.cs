@@ -12,5 +12,6 @@ public class StandardTurret : TurretsBuilding {
         cost = 50;
         Upgradecost = 150;
         level = 1;
+        RotationSpeed = 10;
     }
 }

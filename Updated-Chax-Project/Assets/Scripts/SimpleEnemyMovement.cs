@@ -11,7 +11,7 @@ public class SimpleEnemyMovement : MonoBehaviour {
 	void Start ()
     {
         enemy = new SimpleEnemy(WaveSpawner.wavenumber/3 +1 );
-        Debug.Log(enemy.Level.ToString());
+        //Debug.Log(enemy.Level.ToString());
         target = WayPoints.waypoints[waypointindex];		
 	}
 	
