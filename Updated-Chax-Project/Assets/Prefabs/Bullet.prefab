@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4018756568702530}
   - component: {fileID: 33656715671756662}
   - component: {fileID: 23723281769037368}
-  - component: {fileID: 114884388144802222}
   - component: {fileID: 114227077964068310}
   m_Layer: 0
   m_Name: Bullet
@@ -97,14 +96,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Impacteffect: {fileID: 1203648640219308, guid: a4fdc9435544bda45a53a6c453fbbf33,
     type: 2}
---- !u!114 &114884388144802222
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1515101704221696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50c0a6711693b1740a14118f6334a1ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

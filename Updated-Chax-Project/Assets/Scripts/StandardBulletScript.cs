@@ -33,7 +33,7 @@ public class StandardBulletScript : MonoBehaviour {
     void HitTarget()
     {
         GameObject EffectIns = (GameObject)Instantiate(Impacteffect, transform.position, transform.rotation);
-        Destroy(EffectIns, 2f);
+        Destroy(EffectIns.gameObject, 2f);
         Debug.Log("Destroyed");
         Destroy(gameObject);
     }
