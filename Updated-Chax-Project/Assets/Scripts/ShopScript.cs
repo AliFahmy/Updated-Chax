@@ -16,8 +16,8 @@ public class ShopScript : MonoBehaviour {
     {
         if (GameManagerScript.Game.Coins >= turret.cost)
         {
-            Debug.Log(GameManagerScript.Game.Coins);
-            Debug.Log(turret.cost);
+            Debug.Log("Players coins : "+GameManagerScript.Game.Coins);
+            Debug.Log("standard turret cost : " + turret.cost);
             buildmanager.SetTurretToBuild(buildmanager.StandardTurretPrefab);
             GameManagerScript.Game.Coins -= turret.cost;
 
@@ -31,8 +31,8 @@ public class ShopScript : MonoBehaviour {
     {
         if (GameManagerScript.Game.Coins >= missleturret.cost)
         {
-            Debug.Log(GameManagerScript.Game.Coins);
-            Debug.Log(missleturret.cost);
+            Debug.Log("Players coins : " + GameManagerScript.Game.Coins);
+            Debug.Log("missile turret cost : "+missleturret.cost);
             buildmanager.SetTurretToBuild(buildmanager.MissleTurretPrefab);
             GameManagerScript.Game.Coins -= missleturret.cost;
 

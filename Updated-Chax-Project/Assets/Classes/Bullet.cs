@@ -4,12 +4,15 @@ using UnityEngine;
 
 public abstract class Bullet
 {
-    protected float speed;
-    protected float power;
+    private float speed;
+    private float power;
+    private float explosionRadius;
     public Bullet()
     {
-        speed = 0;
-        power = 0;
+        speed = 0f;
+        power = 0f;
+        explosionRadius = 0f;
+        
     }
     public float Speed
     {
@@ -20,6 +23,28 @@ public abstract class Bullet
         set
         {
             speed = value;
+        }
+    }
+    public float Power
+    {
+        get
+        {
+            return power;
+        }
+        set
+        {
+            power = value;
+        }
+    }
+    public float ExplosionRadius
+    {
+        get
+        {
+            return explosionRadius;
+        }
+        set
+        {
+            explosionRadius = value;
         }
     }
 }

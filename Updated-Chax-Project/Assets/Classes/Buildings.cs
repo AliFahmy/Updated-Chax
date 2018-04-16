@@ -6,9 +6,9 @@ public abstract class Buildings  {
 
     private int Attack;
     private float Range;
-    private int AttackSpeed;
+    private float AttackSpeed;
     public int Reloadtime;
-    public int attackSpeed
+    public float attackSpeed
     {
         get
         {

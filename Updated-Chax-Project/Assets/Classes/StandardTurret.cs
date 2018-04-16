@@ -8,7 +8,7 @@ public class StandardTurret : TurretsBuilding {
     {
         range = 15;
         attack = 30;
-        attackSpeed = 1;
+        attackSpeed = 1.0f;
         cost = 50;
         Upgradecost = 150;
         level = 1;

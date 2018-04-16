@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MissleLauncherScript : MonoBehaviour {
 
-    private MissleTurret turret;
+    private TurretsBuilding turret;
     public Transform target;
     public float x;
     public Transform partToRotate;
@@ -72,8 +72,9 @@ public class MissleLauncherScript : MonoBehaviour {
     }
     void Shoot()
     {
+        // 3ali kfaya copy paste b2a :D
         GameObject bullet = (GameObject)Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
-        StandardBulletScript B = bullet.GetComponent<StandardBulletScript>();
+        MissleBulletScript B = bullet.GetComponent<MissleBulletScript>();
         if (B != null)
             B.seek(target);
     }

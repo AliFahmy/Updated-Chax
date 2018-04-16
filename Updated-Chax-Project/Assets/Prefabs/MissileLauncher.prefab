@@ -259,6 +259,6 @@ MonoBehaviour:
   x: 0
   partToRotate: {fileID: 4581106531233834}
   ReloadTime: 0
-  BulletPrefab: {fileID: 1515101704221696, guid: d992d36258e8ace49940adbf370f12b1,
+  BulletPrefab: {fileID: 1928102209955106, guid: 1eda170404d0031429c8571afd3734b8,
     type: 2}
   FirePoint: {fileID: 4241435709095490}

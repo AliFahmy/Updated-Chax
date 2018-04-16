@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class MissleBullet : Bullet
 {
+    
     public MissleBullet()
     {
-        speed = 75f;
-        power = 100f;
+        Speed = 30f;
+        Power = 100f;
+        ExplosionRadius = 10f;
     }
-	
+    
+
 }

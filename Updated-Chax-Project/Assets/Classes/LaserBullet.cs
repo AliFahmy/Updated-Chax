@@ -6,8 +6,8 @@ public class LaserBullet : Bullet
 {
     public LaserBullet()
     {
-        speed = 100f;
-        power = 200f;
+        Speed = 100f;
+        Power = 200f;
     }
 	
 	

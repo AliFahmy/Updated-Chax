@@ -28,12 +28,13 @@ public class StandardBulletScript : MonoBehaviour {
             return;
         }
         transform.Translate(dir.normalized * distanceThisframe, Space.World);
-        bullet.Speed += 1;
-	}
+        transform.LookAt(target);
+    }
     void HitTarget()
     {
         GameObject EffectIns = (GameObject)Instantiate(Impacteffect, transform.position, transform.rotation);
         Destroy(EffectIns.gameObject, 2f);
+        Destroy(target.gameObject);
         Debug.Log("Destroyed");
         Destroy(gameObject);
     }

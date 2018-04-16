@@ -6,9 +6,9 @@ public class StandardBullet : Bullet
 {
     public StandardBullet()
     {
-        
-        Speed = 10f;
-        power = 50f;
+        ExplosionRadius = 0f;
+        Speed = 70f;
+        Power = 50f;
     }
 	
 }
