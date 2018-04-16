@@ -5,8 +5,10 @@ using UnityEngine;
 public class ShopScript : MonoBehaviour {
     BuildManager buildmanager;
     private StandardTurret turret;
+    private MissleTurret missleturret;
     private void Start()
     {
+        missleturret = new MissleTurret();
         turret = new StandardTurret();
         buildmanager = BuildManager.instance;
     }
@@ -25,4 +27,20 @@ public class ShopScript : MonoBehaviour {
             Debug.Log("cannot buy this :(");
         }
     }
+        public void PurchaseMissleTurret()
+    {
+        if (GameManagerScript.Game.Coins >= missleturret.cost)
+        {
+            Debug.Log(GameManagerScript.Game.Coins);
+            Debug.Log(missleturret.cost);
+            buildmanager.SetTurretToBuild(buildmanager.MissleTurretPrefab);
+            GameManagerScript.Game.Coins -= missleturret.cost;
+
+        }
+        else
+        {
+            Debug.Log("cannot buy this :(");
+        }
+    }
+    
 }
