@@ -108,3 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hovercolor: {r: 0.43306664, g: 0.6544118, b: 0.64525265, a: 0}
+  NotEnoughMoney: {r: 1, g: 0, b: 0, a: 1}
+  BuildEffect: {fileID: 1697007241202692, guid: b0df5f865be03d14ab3c4b1b9de58f36,
+    type: 2}

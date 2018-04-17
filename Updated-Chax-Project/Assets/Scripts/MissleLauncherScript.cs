@@ -36,7 +36,7 @@ public class MissleLauncherScript : MonoBehaviour {
             }
 
         }
-        Debug.Log(turret.range.ToString());
+
         if (nearestenemy != null && shortestdistance <= turret.range)
         {
             target = nearestenemy.transform;

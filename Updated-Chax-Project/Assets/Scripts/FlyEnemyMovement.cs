@@ -12,7 +12,7 @@ public class FlyEnemyMovement : MonoBehaviour
     void Start()
     {
         enemy = new FlyEnemy(WaveSpawner.wavenumber / 2 + 1);
-        Debug.Log(enemy.Level.ToString());
+
     }
 
     // Update is called once per frame

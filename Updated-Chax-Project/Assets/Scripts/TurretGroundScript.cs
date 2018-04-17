@@ -8,10 +8,11 @@ public class TurretGroundScript : MonoBehaviour {
     public Color hovercolor;
     private Color normalcolor;
 	private Vector3 halfabove;
-
+    public Color NotEnoughMoney;
     private BuildManager buildManager;
+    public GameObject BuildEffect;
     // Use this for initialization
-	void Start () {
+    void Start () {
         rend = GetComponent<Renderer>();
         normalcolor = rend.material.color;
         halfabove = new Vector3(0f, 0.5f, 0f);
@@ -29,13 +30,19 @@ public class TurretGroundScript : MonoBehaviour {
 
         if (turret!= null)
         {
-            Debug.Log("there is some turret here display this");
             return;
         }
+        
+        if (GameManagerScript.Game.Coins>=BuildManager.turretcost)
+        {
 
+        GameManagerScript.Game.Coins -= BuildManager.turretcost;
         GameObject turrettobuild = buildManager.GetTurrettoBuild();
         turret = Instantiate(turrettobuild, transform.position+halfabove, transform.rotation )as GameObject ;
+       GameObject effect=(GameObject) Instantiate(BuildEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
         buildManager.SetTurretToBuild(null);
+        }
         // build
     }
     private void OnMouseEnter()
@@ -44,7 +51,14 @@ public class TurretGroundScript : MonoBehaviour {
             return;
         if (buildManager.GetTurrettoBuild() == null)
             return;
-        rend.material.color = hovercolor;
+        if (GameManagerScript.Game.Coins >= BuildManager.turretcost)
+        {
+            rend.material.color = hovercolor;
+        }
+        else
+        {
+            rend.material.color = NotEnoughMoney;
+        }
     }
     private void OnMouseExit()
     {

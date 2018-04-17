@@ -14,33 +14,13 @@ public class ShopScript : MonoBehaviour {
     }
     public void PurchaseStandardTurret()
     {
-        if (GameManagerScript.Game.Coins >= turret.cost)
-        {
-            Debug.Log("Players coins : "+GameManagerScript.Game.Coins);
-            Debug.Log("standard turret cost : " + turret.cost);
-            buildmanager.SetTurretToBuild(buildmanager.StandardTurretPrefab);
-            GameManagerScript.Game.Coins -= turret.cost;
+        buildmanager.SetTurretToBuild(buildmanager.StandardTurretPrefab);
 
-        }
-        else
-        {
-            Debug.Log("cannot buy this :(");
-        }
     }
-        public void PurchaseMissleTurret()
+
+    public void PurchaseMissleTurret()
     {
-        if (GameManagerScript.Game.Coins >= missleturret.cost)
-        {
-            Debug.Log("Players coins : " + GameManagerScript.Game.Coins);
-            Debug.Log("missile turret cost : "+missleturret.cost);
-            buildmanager.SetTurretToBuild(buildmanager.MissleTurretPrefab);
-            GameManagerScript.Game.Coins -= missleturret.cost;
-
-        }
-        else
-        {
-            Debug.Log("cannot buy this :(");
-        }
+        buildmanager.SetTurretToBuild(buildmanager.MissleTurretPrefab);
     }
-    
+
 }

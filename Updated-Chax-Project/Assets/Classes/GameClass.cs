@@ -7,6 +7,8 @@ public class GameClass  {
     private int kills;
     private int score;
     private int wavesPassed;
+    public StandardTurret standardTurretTemp;
+    public MissleTurret missleLuncherTemp;
     public static BaseBuilding MainBase;
     public int Coins
     {
@@ -55,6 +57,8 @@ public class GameClass  {
     public GameClass()
     {
         MainBase = new BaseBuilding(100);
+        standardTurretTemp = new StandardTurret();
+        missleLuncherTemp = new MissleTurret();
         kills = 0;
         score = 0;
         coins = 200;

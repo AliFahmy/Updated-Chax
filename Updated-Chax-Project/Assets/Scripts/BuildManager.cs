@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour {
 
+    public GameObject StandardTurretPrefab;
+    public GameObject MissleTurretPrefab;
+    private GameObject turrettobuild;
+    
     public static BuildManager instance;
+
+
+    public static int turretcost;
+
     private void Awake()
     {
         if (instance!= null)
@@ -15,15 +23,21 @@ public class BuildManager : MonoBehaviour {
         instance = this;
     }
     
-    public GameObject StandardTurretPrefab;
-    public GameObject MissleTurretPrefab;
-    private GameObject turrettobuild;
     public GameObject GetTurrettoBuild()
     {
         return turrettobuild;
     }
     public void SetTurretToBuild( GameObject t )
     {
+        if (t==StandardTurretPrefab)
+        {
+            turretcost = GameManagerScript.Game.standardTurretTemp.cost;
+        }
+        else if (t==MissleTurretPrefab)
+        {
+            turretcost = GameManagerScript.Game.missleLuncherTemp.cost;
+            
+        }
         turrettobuild = t;
     }
 }
