@@ -5,7 +5,6 @@ public class CameraController : MonoBehaviour
     private bool EnableMovement;
 
     private float PanSpeed;
-    private float BorderThickness;
     private float ScrollSpeed;
     private float MaxY;
     private float MinY;
@@ -13,10 +12,9 @@ public class CameraController : MonoBehaviour
     {
         EnableMovement = true;
         PanSpeed = 30.0f;
-        BorderThickness = 10.0f;
         ScrollSpeed = 5f;
         MinY = 10f;
-        MaxY = 60f;
+        MaxY = 100f;
     }
     void Update()
     {

@@ -14,9 +14,19 @@ public class SimpleEnemyMovement : MonoBehaviour {
         //Debug.Log(enemy.Level.ToString());
         target = WayPoints.waypoints[waypointindex];		
 	}
-	
-	// Update is called once per frame
-	void Update ()
+    public void hitted(int damage)
+    {
+        Debug.Log("health before hit : " + enemy.Health);
+        enemy.Health -= damage;
+        Debug.Log("health After hit : " + enemy.Health);
+        if (enemy.Health <= 0)
+        {
+            GameManagerScript.Game.Coins += enemy.KillReward;
+            Destroy(gameObject);
+        }
+    }
+    // Update is called once per frame
+    void Update ()
     {
         if (enemy.Health <= 0)
         {
@@ -29,11 +39,16 @@ public class SimpleEnemyMovement : MonoBehaviour {
         {
             if (waypointindex >= WayPoints.waypoints.Length-1)
             {
-                Destroy(gameObject);
+                AtEnd();
                 return;
             }
             waypointindex++;
             target = WayPoints.waypoints[waypointindex];
         }	
 	}
+    public void AtEnd()
+    {
+        GameManagerScript.Game._Lives--;
+        Destroy(gameObject);
+    }
 }

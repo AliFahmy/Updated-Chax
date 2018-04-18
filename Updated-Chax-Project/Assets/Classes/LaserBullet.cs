@@ -7,7 +7,7 @@ public class LaserBullet : Bullet
     public LaserBullet()
     {
         Speed = 100f;
-        Power = 200f;
+        Power = 200;
     }
 	
 	

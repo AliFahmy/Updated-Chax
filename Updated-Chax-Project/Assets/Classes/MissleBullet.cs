@@ -8,7 +8,7 @@ public class MissleBullet : Bullet
     public MissleBullet()
     {
         Speed = 30f;
-        Power = 100f;
+        Power = 100;
         ExplosionRadius = 10f;
     }
     

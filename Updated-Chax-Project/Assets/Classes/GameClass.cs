@@ -7,6 +7,8 @@ public class GameClass  {
     private int kills;
     private int score;
     private int wavesPassed;
+    private static int Lives;
+    private int startlives;
     public StandardTurret standardTurretTemp;
     public MissleTurret missleLuncherTemp;
     public static BaseBuilding MainBase;
@@ -54,6 +56,17 @@ public class GameClass  {
             wavesPassed = value;
         }
     }
+    public int _Lives
+    {
+        get
+        {
+            return Lives;
+        }
+        set
+        {
+            Lives = value;
+        }
+    }
     public GameClass()
     {
         MainBase = new BaseBuilding(100);
@@ -63,6 +76,9 @@ public class GameClass  {
         score = 0;
         coins = 200;
         wavesPassed = 0;
+        startlives = 50;
+        Lives = startlives;
 
     }
+      
 }

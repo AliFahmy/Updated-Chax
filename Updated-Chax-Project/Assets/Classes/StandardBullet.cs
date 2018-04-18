@@ -8,7 +8,7 @@ public class StandardBullet : Bullet
     {
         ExplosionRadius = 0f;
         Speed = 70f;
-        Power = 50f;
+        Power = 50;
     }
 	
 }

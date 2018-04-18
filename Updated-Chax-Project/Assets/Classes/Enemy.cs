@@ -8,6 +8,8 @@ public abstract class Enemy  {
     //private int currentHealth;
     private int killReward;
     private int level;
+    
+    
     public Enemy()
     {
         level = 0;

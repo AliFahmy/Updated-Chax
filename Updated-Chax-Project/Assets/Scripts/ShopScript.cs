@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ShopScript : MonoBehaviour {
     BuildManager buildmanager;
-    private StandardTurret turret;
-    private MissleTurret missleturret;
+    //private StandardTurret turret;
+    //private MissleTurret missleturret;
+    
     private void Start()
     {
-        missleturret = new MissleTurret();
-        turret = new StandardTurret();
+        //missleturret = new MissleTurret();
+        //turret = new StandardTurret();
         buildmanager = BuildManager.instance;
     }
     public void PurchaseStandardTurret()

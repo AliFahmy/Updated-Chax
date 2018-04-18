@@ -67,7 +67,20 @@ public class MissleBulletScript : MonoBehaviour {
     void damage(Transform todamage)
     {
         //damage the given gameobject
-        Destroy(todamage.gameObject);
+        if (todamage.gameObject.GetComponent<SimpleEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<SimpleEnemyMovement>().hitted(missle.Power);
+
+        }
+        if (todamage.gameObject.GetComponent<FlyEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<FlyEnemyMovement>().hitted(missle.Power);
+        }
+        if (todamage.gameObject.GetComponent<ToughEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<ToughEnemyMovement>().hitted(missle.Power);
+        }
+        //Destroy(todamage.gameObject);
     }
     private void OnDrawGizmosSelected()
     {

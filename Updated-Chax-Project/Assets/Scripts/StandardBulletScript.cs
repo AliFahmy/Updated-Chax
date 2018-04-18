@@ -34,8 +34,24 @@ public class StandardBulletScript : MonoBehaviour {
     {
         GameObject EffectIns = (GameObject)Instantiate(Impacteffect, transform.position, transform.rotation);
         Destroy(EffectIns.gameObject, 2f);
-        Destroy(target.gameObject);
+        damage(target.transform);
         Debug.Log("Destroyed");
         Destroy(gameObject);
+    }
+    void damage(Transform todamage)
+    {
+        if (todamage.gameObject.GetComponent<SimpleEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<SimpleEnemyMovement>().hitted(bullet.Power);
+
+        }
+        if (todamage.gameObject.GetComponent<FlyEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<FlyEnemyMovement>().hitted(bullet.Power);
+        }
+        if (todamage.gameObject.GetComponent<ToughEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<ToughEnemyMovement>().hitted(bullet.Power);
+        }
     }
 }
