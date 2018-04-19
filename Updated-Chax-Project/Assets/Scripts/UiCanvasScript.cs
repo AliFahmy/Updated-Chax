@@ -13,6 +13,6 @@ public class UiCanvasScript : MonoBehaviour
     {
 
         wavecount.text ="Wave #"+(WaveSpawner.wavenumber).ToString();
-        currentcoins.text = (GameManagerScript.Game.Coins).ToString();
+        currentcoins.text ="$"+ (GameManagerScript.Game.Coins).ToString();
     }
 }
