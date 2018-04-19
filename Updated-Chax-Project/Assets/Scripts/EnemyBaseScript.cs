@@ -14,6 +14,7 @@ public abstract class EnemyBaseScript : MonoBehaviour {
         Debug.Log("health After hit : " + enemy.Health);
         if (enemy.Health <= 0)
         {
+            GameManagerScript.Game.EnemiesAlive--;
             GameManagerScript.Game.Coins += enemy.KillReward;
             Destroy(gameObject);
         }
@@ -22,6 +23,8 @@ public abstract class EnemyBaseScript : MonoBehaviour {
    
     protected void AtEnd()
     {
+
+        GameManagerScript.Game.EnemiesAlive--;
         GameManagerScript.Game._Lives--;
         Destroy(gameObject);
     }

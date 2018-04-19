@@ -4,7 +4,7 @@ using UnityEngine;
 //LAZEM NEFHM AL CLASS BY3ML EH 
 public class StandardBulletScript : MonoBehaviour {
     private Transform target;
-    private StandardBullet bullet;
+    public StandardBullet bullet;
     public GameObject Impacteffect;
     public void seek(Transform _target)
     {

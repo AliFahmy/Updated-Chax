@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Enemy  {
     private float speed;
     private int health;
-    //private int currentHealth;
+    private int mainHealth;
     private int killReward;
     private int level;
     
@@ -15,6 +15,7 @@ public abstract class Enemy  {
         level = 0;
         speed = 0;
         health = 0;
+        mainHealth = 0;
         killReward = 0;
     }
     public float Speed
@@ -61,8 +62,15 @@ public abstract class Enemy  {
             level = value ;
         }
     }
-    public virtual void move()
+    public int MainHealth
     {
-
+        get
+        {
+            return mainHealth;
+        }
+        set
+        {
+            mainHealth = value;
+        }
     }
 }

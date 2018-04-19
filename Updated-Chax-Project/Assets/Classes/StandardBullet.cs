@@ -10,5 +10,10 @@ public class StandardBullet : Bullet
         Speed = 70f;
         Power = 50;
     }
-	
+    public StandardBullet(int p)
+    {
+        ExplosionRadius = 0f;
+        Speed = 70f;
+        Power = p;
+    }
 }

@@ -8,14 +8,14 @@ public class SimpleEnemy : Enemy {
     {
         Level = 1;
         Speed = 10;
-        Health = Level * 200;
+        Health = MainHealth = Level * 200;
         KillReward = Level * 5;
     }
     public SimpleEnemy(int l)
     {
         Level = l;
         Speed =  5;
-        Health = Level * 200;
+        Health = MainHealth = Level * 200;
         KillReward = Level * 5;
     }
 }

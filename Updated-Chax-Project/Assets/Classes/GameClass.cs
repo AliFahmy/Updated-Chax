@@ -6,12 +6,24 @@ public class GameClass  {
     private int coins;
     private int kills;
     private int score;
+    private int enemiesalive;
     private int wavesPassed;
     private static int Lives;
     private int startlives;
     public StandardTurret standardTurretTemp;
     public MissleTurret missleLuncherTemp;
     public static BaseBuilding MainBase;
+    public int EnemiesAlive
+    {
+        get
+        {
+            return enemiesalive;
+        }
+        set
+        {
+            enemiesalive = value;
+        }
+    }
     public int Coins
     {
         get

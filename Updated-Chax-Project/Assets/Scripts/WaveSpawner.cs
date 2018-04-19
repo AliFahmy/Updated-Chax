@@ -20,18 +20,25 @@ public class WaveSpawner : MonoBehaviour
     public Transform FlyingSpawnPoint;
     void Update()
     {
+        if (GameManagerScript.Game.EnemiesAlive>0)
+        {
+            return;
+        }
+
         if (countdown <= 0)
         {
             StartCoroutine(SpawnWave());
             countdown = TimeBetweenWaves;
+            return;
         }
-        leftfornextround.text = (Mathf.Ceil( countdown ) ).ToString();
         countdown -= Time.deltaTime;
+        leftfornextround.text = (Mathf.Ceil( countdown ) ).ToString();
     }
      IEnumerator SpawnWave()
     {
         for(int i = 0; i < wavenumber; i++)
         {
+
             SpawnGroundEnemy(SimpleEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
@@ -40,7 +47,7 @@ public class WaveSpawner : MonoBehaviour
             SpawnGroundEnemy(ToughEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
-        for (int i = 0; i < wavenumber/7; i++)
+        for (int i = 0; i < wavenumber/2; i++)
         {
             SpawnFlyingEnemy(FlyEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
@@ -49,10 +56,12 @@ public class WaveSpawner : MonoBehaviour
     }
     void SpawnGroundEnemy(GameObject tospawn)
     {
+        GameManagerScript.Game.EnemiesAlive++;
         Instantiate(tospawn , GroundSpawnPoint.position, GroundSpawnPoint.rotation);
     }
     void SpawnFlyingEnemy(GameObject tospawn)
     {
+        GameManagerScript.Game.EnemiesAlive++;
         Instantiate(tospawn, FlyingSpawnPoint.position, FlyingSpawnPoint.rotation);
     }
 }
