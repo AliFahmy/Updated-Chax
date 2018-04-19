@@ -76,7 +76,10 @@ public class MissleLauncherScript : MonoBehaviour {
         GameObject bullet = (GameObject)Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
         MissleBulletScript B = bullet.GetComponent<MissleBulletScript>();
         if (B != null)
+        {
+            B.missle = new MissleBullet(turret.attack);
             B.seek(target);
+        }
     }
     private void OnDrawGizmosSelected()
     {

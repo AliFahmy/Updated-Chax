@@ -6,6 +6,7 @@ public class MissleTurret : TurretsBuilding {
 
     public MissleTurret()
     {
+        RotationSpeed = 20;
         range = 30f;
         attack = 200;
         attackSpeed = 0.25f;

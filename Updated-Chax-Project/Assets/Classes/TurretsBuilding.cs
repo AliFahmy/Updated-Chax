@@ -61,9 +61,9 @@ public abstract class TurretsBuilding : Buildings
     }
     public void IncreaseLevel()
     {
-        rotationSpeed = 10;
         Level++;
         attackSpeed *= 2;
         attack *= 2;
+        UpgradeCost *= 2;
     }
 }

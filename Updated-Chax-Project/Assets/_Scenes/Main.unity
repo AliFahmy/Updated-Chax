@@ -2570,7 +2570,7 @@ MonoBehaviour:
   FlyEnemyPrefab: {fileID: 1310303045124858, guid: 3cc1cc35620ffc8419d592025a8c8236,
     type: 2}
   leftfornextround: {fileID: 171281226}
-  TimeBetweenWaves: 20
+  TimeBetweenWaves: 5
   GroundSpawnPoint: {fileID: 1433132796}
   FlyingSpawnPoint: {fileID: 638457327}
 --- !u!114 &284265929

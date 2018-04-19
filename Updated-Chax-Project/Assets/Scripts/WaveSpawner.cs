@@ -35,12 +35,12 @@ public class WaveSpawner : MonoBehaviour
             SpawnGroundEnemy(SimpleEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
-        for (int i = 0; i < wavenumber /100; i++)
+        for (int i = 0; i < wavenumber /5; i++)
         {
             SpawnGroundEnemy(ToughEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
-        for (int i = 0; i < wavenumber/2; i++)
+        for (int i = 0; i < wavenumber/7; i++)
         {
             SpawnFlyingEnemy(FlyEnemyPrefab);
             yield return new WaitForSeconds(0.5f);

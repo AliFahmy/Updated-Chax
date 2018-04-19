@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MissleBulletScript : MonoBehaviour {
     private Transform target;
-    private Bullet missle;
+    public Bullet missle;
     public GameObject Impacteffect;
     public void seek(Transform _target)
     {

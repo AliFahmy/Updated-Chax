@@ -7,16 +7,16 @@ public class FlyEnemy : Enemy
     public FlyEnemy()
     {
         Level = 1;
-        Speed = Level ;
-        Health = Level * 100;
-        KillReward = Level * 50;
+        Speed = 5 ;
+        Health = 300;
+        KillReward = Level * 10;
     }
     public FlyEnemy(int l)
     {
         Level = l;
-        Speed = Level ;
-        Health = Level * 100;
-        KillReward = Level * 50;
+        Speed = 5 ;
+        Health = Level * 300;
+        KillReward = Level * 10;
     }
 
 }

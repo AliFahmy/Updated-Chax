@@ -7,16 +7,16 @@ public class ToughEnemy : GroundEnemy
     public ToughEnemy()
     {
         Level = 1;
-        Speed = Level * 2;
+        Speed = 3;
         Health = Level * 1000;
-        KillReward = Level * 150;
+        KillReward = Level * 15;
     }
     public ToughEnemy(int l)
     {
         Level = l;
-        Speed = Level * 2;
+        Speed = 3;
         Health = Level * 1000;
-        KillReward = Level * 150;
+        KillReward = Level * 15;
     }
     public override void move()
     {

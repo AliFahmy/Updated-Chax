@@ -7,15 +7,15 @@ public class SimpleEnemy : Enemy {
     public SimpleEnemy()
     {
         Level = 1;
-        Speed = 5;
-        Health = Level * 100;
-        KillReward = Level * 50;
+        Speed = 10;
+        Health = Level * 200;
+        KillReward = Level * 5;
     }
     public SimpleEnemy(int l)
     {
         Level = l;
         Speed =  5;
-        Health = Level * 100;
-        KillReward = Level * 50;
+        Health = Level * 200;
+        KillReward = Level * 5;
     }
 }

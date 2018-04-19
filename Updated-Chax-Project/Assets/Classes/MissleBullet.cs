@@ -11,6 +11,11 @@ public class MissleBullet : Bullet
         Power = 100;
         ExplosionRadius = 10f;
     }
-    
+    public MissleBullet(int p)
+    {
+        Speed = 30f;
+        Power = p;
+        ExplosionRadius = 10f;
+    }
 
 }
