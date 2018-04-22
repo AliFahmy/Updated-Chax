@@ -6,10 +6,9 @@ public class BuildManager : MonoBehaviour {
 
     public GameObject StandardTurretPrefab;
     public GameObject MissleTurretPrefab;
+    public GameObject LaserTurretPrefab;
     private GameObject turrettobuild;
-    
     public static BuildManager instance;
-
 
     public static int turretcost;
 
@@ -22,13 +21,19 @@ public class BuildManager : MonoBehaviour {
         }
         instance = this;
     }
-    
+    public void selectedNode(TurretGroundScript Node)
+    {
+
+        turrettobuild = null;//while showing the ui of the turret we cant build one there 
+
+    }
     public GameObject GetTurrettoBuild()
     {
         return turrettobuild;
     }
     public void SetTurretToBuild( GameObject t )
     {
+        Debug.Log("set turret");
         if (t==StandardTurretPrefab)
         {
             turretcost = GameManagerScript.Game.standardTurretTemp.cost;
@@ -36,8 +41,12 @@ public class BuildManager : MonoBehaviour {
         else if (t==MissleTurretPrefab)
         {
             turretcost = GameManagerScript.Game.missleLuncherTemp.cost;
-            
+        }
+        else if (t == LaserTurretPrefab)
+        {
+            turretcost = GameManagerScript.Game.LaserTurretTemp.cost;
         }
         turrettobuild = t;
+
     }
 }

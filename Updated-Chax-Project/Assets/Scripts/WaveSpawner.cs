@@ -15,9 +15,13 @@ public class WaveSpawner : MonoBehaviour
 
     public float TimeBetweenWaves=20f;
     private float countdown=2f;
-    public static int wavenumber=1;
+    public static int wavenumber=0;
     public Transform GroundSpawnPoint;
     public Transform FlyingSpawnPoint;
+    public void Start()
+    {
+      wavenumber = 1;
+    }
     void Update()
     {
         if (GameManagerScript.Game.EnemiesAlive>0)

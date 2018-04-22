@@ -18,7 +18,11 @@ public class CameraController : MonoBehaviour
     }
     void Update()
     {
-
+        if (GameManagerScript.GameEnded)
+        {
+            enabled = false;
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             EnableMovement = !EnableMovement;

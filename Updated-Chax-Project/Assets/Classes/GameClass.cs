@@ -12,6 +12,7 @@ public class GameClass  {
     private int startlives;
     public StandardTurret standardTurretTemp;
     public MissleTurret missleLuncherTemp;
+    public LaserTurret LaserTurretTemp;
     public static BaseBuilding MainBase;
     public int EnemiesAlive
     {
@@ -84,13 +85,13 @@ public class GameClass  {
         MainBase = new BaseBuilding(100);
         standardTurretTemp = new StandardTurret();
         missleLuncherTemp = new MissleTurret();
+        LaserTurretTemp = new LaserTurret();
         kills = 0;
         score = 0;
-        coins = 200;
+        coins = 500;
         wavesPassed = 0;
-        startlives = 50;
+        startlives = 1;
         Lives = startlives;
-
     }
       
 }

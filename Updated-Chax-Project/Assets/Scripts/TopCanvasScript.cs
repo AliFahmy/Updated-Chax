@@ -7,7 +7,12 @@ public class TopCanvasScript : MonoBehaviour {
     public Text Lives;
 
 	// Update is called once per frame
-	void Update () {
-        Lives.text ="Lives : "+ GameManagerScript.Game._Lives.ToString();
-	}
+	void Update ()
+    {
+        if (GameManagerScript.Game._Lives >= 0)
+        {
+            Lives.text = "Lives : " + GameManagerScript.Game._Lives.ToString();
+        }
+    }
+
 }

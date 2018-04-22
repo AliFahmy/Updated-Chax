@@ -9,7 +9,7 @@ public class LaserTurret : TurretsBuilding {
         range = 15;
         attack = 100;
         attackSpeed = 10;
-        cost = 100;
+        cost = 300;
         Upgradecost = 200;
         level = 1;
     }

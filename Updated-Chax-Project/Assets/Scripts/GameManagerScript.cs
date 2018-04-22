@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour {
     public static GameClass Game;
-    private bool GameEnded;
+    public static bool GameEnded;
+    public GameObject GameOverUI;
+    
 	// Use this for initialization
 	void Start () {
         Game = new GameClass();
+        GameEnded = false;
 	}
 	
 	// Update is called once per frame
@@ -23,6 +26,6 @@ public class GameManagerScript : MonoBehaviour {
     void EndGame()
     {
             GameEnded = true;
-        Debug.Log("Game Ended");
+        GameOverUI.SetActive(true);
     }
 }

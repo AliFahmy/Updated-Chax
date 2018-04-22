@@ -41,7 +41,8 @@ public class TurretGroundScript : MonoBehaviour {
         turret = Instantiate(turrettobuild, transform.position+halfabove, transform.rotation )as GameObject ;
        GameObject effect=(GameObject) Instantiate(BuildEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
-        buildManager.SetTurretToBuild(null);
+           
+       
         }
         // build
     }

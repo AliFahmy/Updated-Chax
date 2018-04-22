@@ -23,5 +23,8 @@ public class ShopScript : MonoBehaviour {
     {
         buildmanager.SetTurretToBuild(buildmanager.MissleTurretPrefab);
     }
-
+    public void PurchaseLaserTurret()
+    {
+        buildmanager.SetTurretToBuild(buildmanager.LaserTurretPrefab);
+    }
 }
