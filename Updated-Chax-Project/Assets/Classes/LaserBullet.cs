@@ -9,6 +9,10 @@ public class LaserBullet : Bullet
         Speed = 100f;
         Power = 200;
     }
-	
+	public LaserBullet(int p)
+	{
+		Speed = 100f;
+		Power = p;
+	}
 	
 }

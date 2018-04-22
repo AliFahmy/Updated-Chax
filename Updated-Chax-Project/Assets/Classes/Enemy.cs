@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class Enemy  {
     private float speed;
-    private int health;
-    private int mainHealth;
+	private float health;
+    private float mainHealth;
     private int killReward;
     private int level;
     
@@ -14,7 +14,7 @@ public abstract class Enemy  {
     {
         level = 0;
         speed = 0;
-        health = 0;
+        health = 0f;
         mainHealth = 0;
         killReward = 0;
     }
@@ -29,7 +29,7 @@ public abstract class Enemy  {
             speed = value ;
         }
     }
-    public int Health
+    public float Health
     {
         get
         {
@@ -62,7 +62,7 @@ public abstract class Enemy  {
             level = value ;
         }
     }
-    public int MainHealth
+	public float MainHealth
     {
         get
         {

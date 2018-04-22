@@ -8,14 +8,14 @@ public class FlyEnemy : Enemy
     {
         Level = 1;
         Speed = 5 ;
-        Health = MainHealth = 300;
+        Health = MainHealth = 300f;
         KillReward = Level * 10;
     }
     public FlyEnemy(int l)
     {
         Level = l;
         Speed = 5 ;
-        Health = MainHealth = Level * 300;
+        Health = MainHealth = Level * 300f;
         KillReward = Level * 10;
     }
 
