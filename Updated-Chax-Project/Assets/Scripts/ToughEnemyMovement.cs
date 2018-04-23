@@ -18,12 +18,13 @@ public class ToughEnemyMovement : EnemyBaseScript
     void Update()
     {
         Move();
+        enemy.CurrentSpeed = enemy.Speed;
     }
 
     public override void Move()
     {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * enemy.Speed * Time.deltaTime);
+        transform.Translate(dir.normalized * enemy.CurrentSpeed * Time.deltaTime);
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             if (waypointindex >= WayPoints.waypoints.Length - 1)

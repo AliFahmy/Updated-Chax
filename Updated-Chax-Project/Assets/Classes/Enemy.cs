@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Enemy  {
+    private float currentspeed;
     private float speed;
 	private float health;
     private float mainHealth;
@@ -13,7 +14,7 @@ public abstract class Enemy  {
     public Enemy()
     {
         level = 0;
-        speed = 0;
+       currentspeed= speed = 0;
         health = 0f;
         mainHealth = 0;
         killReward = 0;
@@ -27,6 +28,17 @@ public abstract class Enemy  {
         set
         {
             speed = value ;
+        }
+    }
+    public float CurrentSpeed
+    {
+        get
+        {
+            return currentspeed;
+        }
+        set
+        {
+            currentspeed = value;
         }
     }
     public float Health

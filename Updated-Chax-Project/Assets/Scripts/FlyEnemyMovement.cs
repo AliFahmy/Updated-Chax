@@ -21,12 +21,13 @@ public class FlyEnemyMovement : EnemyBaseScript
         //    Destroy(gameObject);
         //}
         Move();
-        
+        enemy.CurrentSpeed = enemy.Speed;
+
     }
     public override void Move()
     {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * enemy.Speed * Time.deltaTime);
+        transform.Translate(dir.normalized * enemy.CurrentSpeed * Time.deltaTime);
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             AtEnd();

@@ -90,7 +90,7 @@ public class GameClass  {
         score = 0;
         coins = 500;
         wavesPassed = 0;
-        startlives = 1;
+        startlives = 50;
         Lives = startlives;
     }
       

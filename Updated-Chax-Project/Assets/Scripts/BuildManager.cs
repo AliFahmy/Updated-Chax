@@ -33,7 +33,7 @@ public class BuildManager : MonoBehaviour {
     }
     public void SetTurretToBuild( GameObject t )
     {
-        Debug.Log("set turret");
+
         if (t==StandardTurretPrefab)
         {
             turretcost = GameManagerScript.Game.standardTurretTemp.cost;
