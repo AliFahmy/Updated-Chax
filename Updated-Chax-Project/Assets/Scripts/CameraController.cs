@@ -23,12 +23,6 @@ public class CameraController : MonoBehaviour
             enabled = false;
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            EnableMovement = !EnableMovement;
-        }
-        if (!EnableMovement)
-            return;
         if (Input.GetKey("w") )//|| Input.mousePosition.y >= Screen.height - BorderThickness)
         {
             transform.Translate(Vector3.forward * PanSpeed * Time.deltaTime, Space.World);
