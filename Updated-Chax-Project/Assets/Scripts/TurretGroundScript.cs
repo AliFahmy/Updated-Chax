@@ -20,18 +20,24 @@ public class TurretGroundScript : MonoBehaviour {
 
         buildManager = BuildManager.instance;
 	}
+
+	public Vector3 GetBuildPosition()
+	{
+		return this.transform.position + halfabove;
+	}
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (buildManager.GetTurrettoBuild() == null)
-            return;
 
         if (turret!= null)
         {
+			buildManager.selectNode(this);
             return;
         }
+		if (buildManager.GetTurrettoBuild() == null)
+			return;
         
         if (GameManagerScript.Game.Coins>=BuildManager.turretcost)
         {
@@ -39,7 +45,7 @@ public class TurretGroundScript : MonoBehaviour {
         GameManagerScript.Game.Coins -= BuildManager.turretcost;
         GameObject turrettobuild = buildManager.GetTurrettoBuild();
         turret = Instantiate(turrettobuild, transform.position+halfabove, transform.rotation )as GameObject ;
-       GameObject effect=(GameObject) Instantiate(BuildEffect, transform.position, Quaternion.identity);
+       	GameObject effect=(GameObject) Instantiate(BuildEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
            
        

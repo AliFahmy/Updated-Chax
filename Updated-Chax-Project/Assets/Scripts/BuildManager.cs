@@ -9,9 +9,9 @@ public class BuildManager : MonoBehaviour {
     public GameObject LaserTurretPrefab;
     private GameObject turrettobuild;
     public static BuildManager instance;
-
+	TurretGroundScript SelectedTurret;
     public static int turretcost;
-
+	public TurretUIScript turretUI;
     private void Awake()
     {
         if (instance!= null)
@@ -21,15 +21,12 @@ public class BuildManager : MonoBehaviour {
         }
         instance = this;
     }
-    public void selectedNode(TurretGroundScript Node)
+    public void selectNode(TurretGroundScript Node)
     {
-
+		SelectedTurret = Node;
+		turretUI.setGround (Node);
         turrettobuild = null;//while showing the ui of the turret we cant build one there 
 
-    }
-    public GameObject GetTurrettoBuild()
-    {
-        return turrettobuild;
     }
     public void SetTurretToBuild( GameObject t )
     {
@@ -47,6 +44,11 @@ public class BuildManager : MonoBehaviour {
             turretcost = GameManagerScript.Game.LaserTurretTemp.cost;
         }
         turrettobuild = t;
-
+		SelectedTurret = null;
+		turretUI.Hide ();
     }
+	public GameObject GetTurrettoBuild()
+	{
+		return turrettobuild;
+	}
 }
