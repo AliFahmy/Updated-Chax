@@ -20,6 +20,6 @@ public class MissleTurret : TurretsBuilding {
 		range += 1;
 		attack += 100;
 		UpgradeCost += 75;
-
+		cost = UpgradeCost;
 	}
 }

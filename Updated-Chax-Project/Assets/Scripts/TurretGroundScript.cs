@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public class TurretGroundScript : MonoBehaviour {
+	private GameObject turret;
+
     private Renderer rend;
-    private GameObject turret;
     public Color hovercolor;
     private Color normalcolor;
 	private Vector3 halfabove;
-    public Color NotEnoughMoney;
+    
+	public Color NotEnoughMoney;
     private BuildManager buildManager;
-    public GameObject BuildEffect;
+    
+	public GameObject BuildEffect;
     // Use this for initialization
     void Start () {
         rend = GetComponent<Renderer>();
@@ -52,6 +55,27 @@ public class TurretGroundScript : MonoBehaviour {
        
         }
     }
+	public void SellTurret ()
+	{
+		if (turret.GetComponent<StandardTurretScript>() != null) {
+			GameManagerScript.Game.Coins += turret.GetComponent<StandardTurretScript> ().turret.cost / 2;
+			//turret = null;
+			Destroy (turret.gameObject);
+			return;
+		}
+		if (turret.GetComponent<MissleLauncherScript>() != null) {
+			GameManagerScript.Game.Coins += turret.GetComponent<MissleLauncherScript> ().turret.cost / 2;
+			Destroy (turret.gameObject);
+			return;
+		}
+		if (turret.GetComponent<LaserTurretScript>() != null) {
+			GameManagerScript.Game.Coins += turret.GetComponent<LaserTurretScript> ().turret.cost / 2;
+			//turret = null;
+			Destroy (turret.gameObject);
+			return;
+		}
+	}
+
 	public void UpgradeCurrentTurret()
 	{
 		if (turret.GetComponent<StandardTurretScript>() != null) {

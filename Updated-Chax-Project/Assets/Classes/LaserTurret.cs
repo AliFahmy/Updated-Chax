@@ -18,7 +18,7 @@ public class LaserTurret : TurretsBuilding {
 		level++;
 		range += 1;
 		attack += 3;
-		UpgradeCost *= 2;
-
+		UpgradeCost += 150;
+		cost = UpgradeCost;
 	}
 }

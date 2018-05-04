@@ -20,7 +20,7 @@ public class StandardTurret : TurretsBuilding {
 		range += 1;
 		attack += 15;
 		UpgradeCost += 25;
-		Debug.Log ("upgraded standard turret");
+		cost = UpgradeCost;
 
 	}
 }

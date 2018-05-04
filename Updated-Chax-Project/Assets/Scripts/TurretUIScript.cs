@@ -23,6 +23,11 @@ public class TurretUIScript : MonoBehaviour {
 		deselectGround ();	
 
 	}
+	public void sell()
+	{
+		currentGround.SellTurret ();
+		deselectGround ();
+	}
 	public void deselectGround()
 	{
 		currentGround = null;

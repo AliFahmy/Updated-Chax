@@ -26,7 +26,6 @@ public class LaserTurretScript : TurretBaseScript {
 
     public override void Shoot()
     {
-		Debug.Log (laserbullet.Power);
         if (!linerenderer.enabled)
         {
             linerenderer.enabled = true;
