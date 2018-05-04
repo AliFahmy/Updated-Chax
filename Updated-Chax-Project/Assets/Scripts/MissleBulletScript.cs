@@ -6,10 +6,10 @@ public class MissleBulletScript : MonoBehaviour {
     private Transform target;
     public Bullet missle;
     public GameObject Impacteffect;
-    public void seek(Transform _target)
+	public void seek(Transform _target , int p)
     {
         // create missle object
-        missle = new MissleBullet();
+        missle = new MissleBullet( p);
         // makes the target
         target = _target;
     }

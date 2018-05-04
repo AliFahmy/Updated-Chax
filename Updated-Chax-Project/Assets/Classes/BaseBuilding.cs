@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BaseBuilding : Buildings {
 
-    private int MainHealth;
-    private int CurrentHealth;
-    private int RepairCost;
+	protected int MainHealth;
+	protected int CurrentHealth;
+	protected int RepairCost;
     public int repairCost
     {
         get

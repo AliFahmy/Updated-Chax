@@ -39,6 +39,7 @@ public class TurretGroundScript : MonoBehaviour {
 		if (buildManager.GetTurrettoBuild() == null)
 			return;
         
+		// build
         if (GameManagerScript.Game.Coins>=BuildManager.turretcost)
         {
 
@@ -50,8 +51,35 @@ public class TurretGroundScript : MonoBehaviour {
            
        
         }
-        // build
     }
+	public void UpgradeCurrentTurret()
+	{
+		if (turret.GetComponent<StandardTurretScript>() != null) {
+			if (GameManagerScript.Game.Coins >= turret.GetComponent<StandardTurretScript> ().turret.Upgradecost) {
+				GameManagerScript.Game.Coins -= turret.GetComponent<StandardTurretScript> ().turret.Upgradecost;
+				turret.GetComponent<StandardTurretScript> ().turret.UpgradeTurret ();
+			}
+			return;
+		}
+		if (turret.GetComponent<MissleLauncherScript>() != null) {
+			if (GameManagerScript.Game.Coins >= turret.GetComponent<MissleLauncherScript> ().turret.Upgradecost) {
+				GameManagerScript.Game.Coins -= turret.GetComponent<MissleLauncherScript> ().turret.Upgradecost;
+				turret.GetComponent<MissleLauncherScript> ().turret.UpgradeTurret ();
+			}
+			return;
+		}
+		if (turret.GetComponent<LaserTurretScript>() != null) {
+			if (GameManagerScript.Game.Coins >= turret.GetComponent<LaserTurretScript> ().turret.Upgradecost) 
+			{
+				GameManagerScript.Game.Coins -= turret.GetComponent<LaserTurretScript> ().turret.Upgradecost;
+				turret.GetComponent<LaserTurretScript> ().turret.UpgradeTurret ();
+				//turret.GetComponent<LaserTurretScript> ().upgrade ();
+				turret.GetComponent<LaserTurretScript> ().laserbullet.Power = turret.GetComponent<LaserTurretScript> ().turret.attack;
+
+			}
+			return;
+		}
+	}
     private void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject())

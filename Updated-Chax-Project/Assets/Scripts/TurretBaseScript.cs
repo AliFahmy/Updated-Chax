@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class TurretBaseScript : MonoBehaviour {
-    protected TurretsBuilding turret;
+    public TurretsBuilding turret;
     public Transform target;
     public Transform partToRotate;
     public float ReloadTime;

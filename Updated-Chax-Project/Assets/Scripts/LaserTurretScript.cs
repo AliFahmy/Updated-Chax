@@ -19,10 +19,14 @@ public class LaserTurretScript : TurretBaseScript {
     {
         Shoot();
     }
-
+	public void upgrade()
+	{
+		laserbullet.Power = turret.attack;
+	}
 
     public override void Shoot()
     {
+		Debug.Log (laserbullet.Power);
         if (!linerenderer.enabled)
         {
             linerenderer.enabled = true;

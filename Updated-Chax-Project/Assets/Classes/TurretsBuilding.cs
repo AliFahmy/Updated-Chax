@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class TurretsBuilding : Buildings
 {
-    private float rotationSpeed;
-    private int Level;
-    private int UpgradeCost;
-    private int Cost;
+    protected float rotationSpeed;
+	protected int Level;
+	protected int UpgradeCost;
+	protected int Cost;
     public float RotationSpeed
     {
         get
@@ -59,7 +59,7 @@ public abstract class TurretsBuilding : Buildings
         UpgradeCost = 0;
         Cost = 0;
     }
-    public void IncreaseLevel()
+	public virtual void UpgradeTurret()
     {
         Level++;
         attackSpeed *= 2;

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Buildings  {
 
-    private int Attack;
-    private float Range;
-    private float AttackSpeed;
+	protected int Attack;
+	protected float Range;
+	protected float AttackSpeed;
     public int Reloadtime;
     public float attackSpeed
     {

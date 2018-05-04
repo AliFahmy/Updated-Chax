@@ -11,8 +11,15 @@ public class MissleTurret : TurretsBuilding {
         attack = 200;
         attackSpeed = 0.25f;
         cost = 150;
-        Upgradecost = 350;
+        Upgradecost = 225;
         level = 1;
     }
- 
+	public override void UpgradeTurret ()
+	{
+		level++;
+		range += 1;
+		attack += 100;
+		UpgradeCost += 75;
+
+	}
 }

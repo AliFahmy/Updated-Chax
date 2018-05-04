@@ -24,8 +24,7 @@ public class MissleLauncherScript : TurretBaseScript {
         MissleBulletScript B = bullet.GetComponent<MissleBulletScript>();
         if (B != null)
         {
-            B.missle = new MissleBullet(turret.attack);
-            B.seek(target);
+			B.seek(target , turret.attack);
         }
     }
     

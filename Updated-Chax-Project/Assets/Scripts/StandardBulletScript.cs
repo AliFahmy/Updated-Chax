@@ -6,9 +6,9 @@ public class StandardBulletScript : MonoBehaviour {
     private Transform target;
     public StandardBullet bullet;
     public GameObject Impacteffect;
-    public void seek(Transform _target)
+	public void seek(Transform _target , int p)
     {
-        bullet = new StandardBullet();
+        bullet = new StandardBullet(p);
         target = _target;
     }
 

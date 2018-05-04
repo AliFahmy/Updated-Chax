@@ -17,6 +17,12 @@ public class TurretUIScript : MonoBehaviour {
 
 		ui.SetActive (true);
 	}
+	public void Upgrade()
+	{
+		currentGround.UpgradeCurrentTurret ();
+		deselectGround ();	
+
+	}
 	public void deselectGround()
 	{
 		currentGround = null;

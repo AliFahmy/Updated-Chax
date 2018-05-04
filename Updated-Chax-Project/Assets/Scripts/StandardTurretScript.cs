@@ -25,8 +25,9 @@ public class StandardTurretScript : TurretBaseScript {
         StandardBulletScript B = bullet.GetComponent<StandardBulletScript>();
         if (B != null)
         {
-            B.bullet = new StandardBullet(turret.attack);
-            B.seek(target);
+			Debug.Log (turret.attack);
+            //B.bullet = new StandardBullet(turret.attack);
+			B.seek(target ,turret.attack );
         }
         return; 
     }

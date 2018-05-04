@@ -10,8 +10,17 @@ public class StandardTurret : TurretsBuilding {
         attack = 30;
         attackSpeed = 1.0f;
         cost = 50;
-        Upgradecost = 150;
+        Upgradecost = 75;
         level = 1;
         RotationSpeed = 10;
     }
+	public override void UpgradeTurret ()
+	{
+		level++;
+		range += 1;
+		attack += 15;
+		UpgradeCost += 25;
+		Debug.Log ("upgraded standard turret");
+
+	}
 }
