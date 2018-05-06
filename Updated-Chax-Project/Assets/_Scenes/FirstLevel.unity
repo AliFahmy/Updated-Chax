@@ -11695,6 +11695,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 2128125938}
+  upgradetext: {fileID: 845514486}
+  selltext: {fileID: 1941214956}
 --- !u!1001 &1341209117
 Prefab:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public class TurretGroundScript : MonoBehaviour {
-	private GameObject turret;
+	public GameObject turret;
 
     private Renderer rend;
     public Color hovercolor;

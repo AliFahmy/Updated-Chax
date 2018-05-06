@@ -8,6 +8,10 @@ public abstract class TurretsBuilding : Buildings
 	protected int Level;
 	protected int UpgradeCost;
 	protected int Cost;
+	public int CalculateSellCost()
+	{
+		return cost / 2;
+	}
     public float RotationSpeed
     {
         get

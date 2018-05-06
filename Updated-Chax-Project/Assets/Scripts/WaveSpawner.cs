@@ -13,7 +13,7 @@ public class WaveSpawner : MonoBehaviour
 
     public Text leftfornextround;
 
-    public float TimeBetweenWaves=20f;
+    public float TimeBetweenWaves=5f;
     private float countdown=2f;
     public static int wavenumber=0;
     public Transform GroundSpawnPoint;
