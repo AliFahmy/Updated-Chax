@@ -8,6 +8,7 @@ public class StandardBulletScript : MonoBehaviour {
     public GameObject Impacteffect;
 	public void seek(Transform _target , int p)
     {
+        SoundManagerScript.playsound("standardshoot");
         bullet = new StandardBullet(p);
         target = _target;
     }

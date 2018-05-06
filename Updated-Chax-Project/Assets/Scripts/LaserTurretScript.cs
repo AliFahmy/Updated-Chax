@@ -71,6 +71,7 @@ public class LaserTurretScript : TurretBaseScript {
                 return;
             
         }
+        SoundManagerScript.playsound("Lasershoot");
         RotateAndShoot();
     }
 }

@@ -45,7 +45,7 @@ public class TurretGroundScript : MonoBehaviour {
 		// build
         if (GameManagerScript.Game.Coins>=BuildManager.turretcost)
         {
-
+        SoundManagerScript.playsound("buyturret");
         GameManagerScript.Game.Coins -= BuildManager.turretcost;
         GameObject turrettobuild = buildManager.GetTurrettoBuild();
         turret = Instantiate(turrettobuild, transform.position+halfabove, transform.rotation )as GameObject ;

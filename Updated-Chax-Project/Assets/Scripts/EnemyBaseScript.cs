@@ -16,6 +16,7 @@ public abstract class EnemyBaseScript : MonoBehaviour {
         {
             GameManagerScript.Game.EnemiesAlive--;
             GameManagerScript.Game.Coins += enemy.KillReward;
+            SoundManagerScript.playsound("Destroyed");
             Destroy(gameObject);
         }
     }

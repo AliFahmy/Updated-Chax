@@ -8,6 +8,8 @@ public class MissleBulletScript : MonoBehaviour {
     public GameObject Impacteffect;
 	public void seek(Transform _target , int p)
     {
+        SoundManagerScript.playsound("missleshoot");
+
         // create missle object
         missle = new MissleBullet( p);
         // makes the target
