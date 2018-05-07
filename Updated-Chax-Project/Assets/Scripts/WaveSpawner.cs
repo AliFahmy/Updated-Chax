@@ -56,6 +56,7 @@ public class WaveSpawner : MonoBehaviour
             SpawnFlyingEnemy(FlyEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
+		GameManagerScript.Game.WavesPassed++;
         wavenumber++;
     }
     void SpawnGroundEnemy(GameObject tospawn)

@@ -18,6 +18,10 @@ public class GameManagerScript : MonoBehaviour {
     {
         if (GameEnded)
             return;
+		if (Input.GetKeyDown ("e")) {
+			EndGame ();
+		}
+
         if (Game._Lives <= 0)
         {
             EndGame();

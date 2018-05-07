@@ -10,7 +10,7 @@ public class GameOverScript : MonoBehaviour
  
     void OnEnable()
     {
-        RoundsText.text = (WaveSpawner.wavenumber-1).ToString();
+		RoundsText.text = GameManagerScript.Game.WavesPassed.ToString();
     }
     public void Retry()
     {

@@ -7,6 +7,7 @@ public class TurretUIScript : MonoBehaviour {
 	public GameObject ui ;
 	public Text upgradetext;
 	public Text selltext;
+	public Text InfoText;
 	public void setGround(TurretGroundScript ground)
 	{
 		if (currentGround == ground) 
@@ -14,29 +15,30 @@ public class TurretUIScript : MonoBehaviour {
 			deselectGround ();
 			return;
 		}
-		if (ground.turret.GetComponent<LaserTurretScript> () != null) {
-			upgradetext.text = "Upgrade\n"+ground.turret.GetComponent<LaserTurretScript> ().turret.Upgradecost+'$';
-		}
-		else if (ground.turret.GetComponent<MissleLauncherScript> () != null) {
-			upgradetext.text = "Upgrade\n"+ground.turret.GetComponent<MissleLauncherScript> ().turret.Upgradecost+'$';
-		}
-		else if (ground.turret.GetComponent<StandardTurretScript> () != null) {
-			upgradetext.text = "Upgrade\n"+ground.turret.GetComponent<StandardTurretScript> ().turret.Upgradecost+'$';
-		}
 
+		TurretsBuilding tempturret ;
 		if (ground.turret.GetComponent<LaserTurretScript> () != null) {
-			selltext.text = "Sell\n"+ground.turret.GetComponent<LaserTurretScript> ().turret.CalculateSellCost()+'$';
+			tempturret = ground.turret.GetComponent<LaserTurretScript> ().turret;
+			//upgradetext.text = "Upgrade\n"+ground.turret.GetComponent<LaserTurretScript> ().turret.Upgradecost+'$';
 		}
 		else if (ground.turret.GetComponent<MissleLauncherScript> () != null) {
-			selltext.text = "Sell\n"+ground.turret.GetComponent<MissleLauncherScript> ().turret.CalculateSellCost()+'$';
+			tempturret = ground.turret.GetComponent<MissleLauncherScript> ().turret;
+			//upgradetext.text = "Upgrade\n"+ground.turret.GetComponent<MissleLauncherScript> ().turret.Upgradecost+'$';
 		}
-		else if (ground.turret.GetComponent<StandardTurretScript> () != null) {
-			selltext.text = "Sell\n"+ground.turret.GetComponent<StandardTurretScript> ().turret.CalculateSellCost()+'$';
+		else {
+			tempturret = ground.turret.GetComponent<StandardTurretScript> ().turret;
 		}
+		upgradetext.text = "Upgrade\n"+tempturret.Upgradecost+'$';
+		selltext.text = "Sell\n" + tempturret.CalculateSellCost() + '$';
+		InfoText.text = "Level : " + tempturret.level+"     ";
+		InfoText.text += "Attack : " + tempturret.attack +"\n";
+		InfoText.text += "Range : " + tempturret.range +"\n";
+		InfoText.text += "Speed : " +(tempturret.attackSpeed) + @" attack/Sec" ;
 		currentGround = ground;
 
 		transform.position = ground.GetBuildPosition ();
-
+		// to fix ui position
+		transform.position += new Vector3 (0, -2.5f, 5f);
 		ui.SetActive (true);
 	}
 	public void Upgrade()
