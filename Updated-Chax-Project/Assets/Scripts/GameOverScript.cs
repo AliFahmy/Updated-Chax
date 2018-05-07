@@ -19,7 +19,7 @@ public class GameOverScript : MonoBehaviour
     public void Menu()
     {
         GameManagerScript.GameEnded = true;
-        MainMenuUI.SetActive(true);
+        SceneManager.LoadScene("MainMenuScene");
     }
 	
 }

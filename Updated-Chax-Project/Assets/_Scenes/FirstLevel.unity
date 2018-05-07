@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 23a28228af732fd4b9512108eba02e11,
+  m_LightingDataAsset: {fileID: 112000004, guid: 44bf7aa95de391a439a0ce61da076422,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -3434,6 +3434,7 @@ MonoBehaviour:
     startingCoins: 1000
     startingLives: 55
     StartingEnemyLevel: 1
+    WavesToWin: 0
 --- !u!114 &284265931
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MainMenuScript : MonoBehaviour {
 	public string leveltoload;
-	void Start()
+
+    void Start()
 	{
 		leveltoload = "x";
 	}
-
 	public void Level1()
 	{
 		leveltoload = "FirstLevel";
