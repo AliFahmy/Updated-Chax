@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour {
     public GameObject UI;
+    public GameObject addlivesui;
+
 	void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
@@ -17,11 +19,13 @@ public class PauseMenu : MonoBehaviour {
         UI.SetActive(!UI.activeSelf);
         if (UI.activeSelf)
         {
+            addlivesui.SetActive(false);
             Time.timeScale = 0f;
             
         }
         else
         {
+            addlivesui.SetActive(true);
             Time.timeScale = 1f;
         }
     }
@@ -34,5 +38,9 @@ public class PauseMenu : MonoBehaviour {
     {
         Toggle();
         SceneManager.LoadScene("MainMenuScene");
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
