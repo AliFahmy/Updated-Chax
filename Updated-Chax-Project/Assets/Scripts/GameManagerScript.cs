@@ -8,6 +8,7 @@ class gameProperites
     public int startingCoins=0;
     public int startingLives = 0;
     public int StartingEnemyLevel = 0;
+    public int WavesToWin = 0;
 
 }
 public class GameManagerScript : MonoBehaviour {
@@ -47,4 +48,6 @@ public class GameManagerScript : MonoBehaviour {
             GameEnded = true;
         GameOverUI.SetActive(true);
     }
+
+    
 }
