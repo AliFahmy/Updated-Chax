@@ -6,7 +6,7 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip missleshoot,standardshoot,lasershoot,destroyed,buyturret,ticker,sell,upgrade;
     static AudioSource AS;
     // Use this for initialization
-	void Start ()
+	void Awake ()
     {
         upgrade = Resources.Load<AudioClip>("DM-CGS-28");    
         missleshoot = Resources.Load<AudioClip>("Missile+2");
@@ -38,7 +38,7 @@ public class SoundManagerScript : MonoBehaviour {
         }
         else if (s == "Lasershoot")
         {
-            AS.volume = .1f;
+            AS.volume = 0.1f;
             AS.PlayOneShot(lasershoot);
         }
         else if (s == "Destroyed")
@@ -52,8 +52,8 @@ public class SoundManagerScript : MonoBehaviour {
         }
         else if (s == "Ticker")
         {
-            //AS.volume = 1f;
-           // AS.PlayOneShot(ticker);
+            AS.volume = 1f;
+           AS.PlayOneShot(ticker);
         }
         else if (s == "sell")
         {

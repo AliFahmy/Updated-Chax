@@ -8,7 +8,7 @@ public class FlyEnemyMovement : EnemyBaseScript
     // Use this for initialization
     void Start()
     {
-        enemy = new FlyEnemy();
+        enemy = new FlyEnemy(WaveSpawner.EnemyStartLevel);
 
     }
     

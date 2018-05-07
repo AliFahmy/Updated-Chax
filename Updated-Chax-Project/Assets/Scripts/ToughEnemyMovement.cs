@@ -9,7 +9,7 @@ public class ToughEnemyMovement : EnemyBaseScript
     // Use this for initialization
     void Start()
     {
-        enemy = new ToughEnemy();
+        enemy = new ToughEnemy(WaveSpawner.EnemyStartLevel);
         
         target = WayPoints.waypoints[waypointindex];
     }
@@ -17,6 +17,7 @@ public class ToughEnemyMovement : EnemyBaseScript
     // Update is called once per frame
     void Update()
     {
+        
         Move();
         enemy.CurrentSpeed = enemy.Speed;
     }

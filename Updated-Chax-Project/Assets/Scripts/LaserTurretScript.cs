@@ -6,6 +6,7 @@ public class LaserTurretScript : TurretBaseScript {
 	public LaserBullet laserbullet;
     public ParticleSystem ImpactEffect;
     private float SlowingRate;
+    public float soundcooldown=0f;
     private void Start()
     {
         SlowingRate = 0.5f;
@@ -26,6 +27,13 @@ public class LaserTurretScript : TurretBaseScript {
 
     public override void Shoot()
     {
+        if (soundcooldown <= 0)
+        {
+
+            SoundManagerScript.playsound("Lasershoot");
+            soundcooldown = 0.1f;
+        }
+        soundcooldown -= Time.deltaTime;
         if (!linerenderer.enabled)
         {
             linerenderer.enabled = true;
@@ -40,24 +48,27 @@ public class LaserTurretScript : TurretBaseScript {
         
     }
 
-		void damage(Transform todamage)
-		{
-			if (todamage.gameObject.GetComponent<SimpleEnemyMovement>() != null)
-			{
-			todamage.gameObject.GetComponent<SimpleEnemyMovement>().hitted(laserbullet.Power);
+    void damage(Transform todamage)
+    {
+        
+        if (todamage.gameObject.GetComponent<SimpleEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<SimpleEnemyMovement>().hitted(laserbullet.Power);
             todamage.gameObject.GetComponent<SimpleEnemyMovement>().Slow(SlowingRate);
-            }
-			if (todamage.gameObject.GetComponent<FlyEnemyMovement>() != null)
-			{
-			todamage.gameObject.GetComponent<FlyEnemyMovement>().hitted(laserbullet.Power);
+        }
+        if (todamage.gameObject.GetComponent<FlyEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<FlyEnemyMovement>().hitted(laserbullet.Power);
             todamage.gameObject.GetComponent<FlyEnemyMovement>().Slow(SlowingRate);
         }
-			if (todamage.gameObject.GetComponent<ToughEnemyMovement>() != null)
-			{
-			todamage.gameObject.GetComponent<ToughEnemyMovement>().hitted(laserbullet.Power);
+        if (todamage.gameObject.GetComponent<ToughEnemyMovement>() != null)
+        {
+            todamage.gameObject.GetComponent<ToughEnemyMovement>().hitted(laserbullet.Power);
             todamage.gameObject.GetComponent<ToughEnemyMovement>().Slow(SlowingRate);
         }
-		}
+
+
+    }
 
     public void Update()
     {
@@ -71,7 +82,7 @@ public class LaserTurretScript : TurretBaseScript {
                 return;
             
         }
-        SoundManagerScript.playsound("Lasershoot");
+        
         RotateAndShoot();
     }
 }

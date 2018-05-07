@@ -1,15 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+[Serializable]
+class gameProperites
+{
+    public int startingCoins=0;
+    public int startingLives = 0;
+    public int StartingEnemyLevel = 0;
 
+}
 public class GameManagerScript : MonoBehaviour {
     public static GameClass Game;
     public static bool GameEnded;
     public GameObject GameOverUI;
+
+    [SerializeField]
+    gameProperites startingprop;
     
 	// Use this for initialization
 	void Start () {
+        //startingprop = new gameProperites();
         Game = new GameClass();
+        Game.Coins = startingprop.startingCoins;
+        Game._Lives = startingprop.startingLives;
+        WaveSpawner.EnemyStartLevel = startingprop.StartingEnemyLevel;
         GameEnded = false;
 	}
 	

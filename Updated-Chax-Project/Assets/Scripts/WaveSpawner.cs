@@ -17,14 +17,17 @@ public class WaveSpawner : MonoBehaviour
     public static int wavenumber=0;
     public Transform GroundSpawnPoint;
     public Transform FlyingSpawnPoint;
+    
+    public static int EnemyStartLevel = 0;
+    
     public void Start()
     {
         SoundManagerScript.playsound("Ticker");
-
         wavenumber = 1;
     }
     void Update()
     {
+        //Sound();
         if (GameManagerScript.Game.EnemiesAlive>0)
         {
             return;
@@ -36,17 +39,21 @@ public class WaveSpawner : MonoBehaviour
             countdown = TimeBetweenWaves;
             return;
         }
+        if (Mathf.Ceil(countdown) != (Mathf.Ceil(countdown - Time.deltaTime)))
+        {
+            Sound();
+        }
         countdown -= Time.deltaTime;
         leftfornextround.text = (Mathf.Ceil( countdown ) ).ToString();
-  //      InvokeRepeating("Sound", 0.001f, 10f);
+
     }
     void Sound()
     {
-    //    SoundManagerScript.playsound("Ticker");
+        SoundManagerScript.playsound("Ticker");
     }
      IEnumerator SpawnWave()
     {
-        for(int i = 0; i < wavenumber; i++)
+        for (int i = 0; i < wavenumber; i++)
         {
 
             SpawnGroundEnemy(SimpleEnemyPrefab);
@@ -64,6 +71,7 @@ public class WaveSpawner : MonoBehaviour
         }
 		GameManagerScript.Game.WavesPassed++;
         wavenumber++;
+        
     }
     void SpawnGroundEnemy(GameObject tospawn)
     {

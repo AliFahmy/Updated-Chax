@@ -9,7 +9,7 @@ public class SimpleEnemyMovement : EnemyBaseScript {
 	// Use this for initialization
 	void Start ()
     {
-        enemy = new SimpleEnemy( );
+        enemy = new SimpleEnemy( WaveSpawner.EnemyStartLevel);
         //Debug.Log(enemy.Level.ToString());
         target = WayPoints.waypoints[waypointindex];		
 	}
