@@ -57,6 +57,7 @@ public class TurretGroundScript : MonoBehaviour {
     }
 	public void SellTurret ()
 	{
+        SoundManagerScript.playsound("sell");
 		if (turret.GetComponent<StandardTurretScript>() != null) {
 			GameManagerScript.Game.Coins += turret.GetComponent<StandardTurretScript> ().turret.cost / 2;
 			//turret = null;
@@ -79,15 +80,19 @@ public class TurretGroundScript : MonoBehaviour {
 	public void UpgradeCurrentTurret()
 	{
 		if (turret.GetComponent<StandardTurretScript>() != null) {
-			if (GameManagerScript.Game.Coins >= turret.GetComponent<StandardTurretScript> ().turret.Upgradecost) {
+			if (GameManagerScript.Game.Coins >= turret.GetComponent<StandardTurretScript> ().turret.Upgradecost)
+            {
+                SoundManagerScript.playsound("upgrade");
 				GameManagerScript.Game.Coins -= turret.GetComponent<StandardTurretScript> ().turret.Upgradecost;
 				turret.GetComponent<StandardTurretScript> ().turret.UpgradeTurret ();
 			}
 			return;
 		}
 		if (turret.GetComponent<MissleLauncherScript>() != null) {
-			if (GameManagerScript.Game.Coins >= turret.GetComponent<MissleLauncherScript> ().turret.Upgradecost) {
-				GameManagerScript.Game.Coins -= turret.GetComponent<MissleLauncherScript> ().turret.Upgradecost;
+			if (GameManagerScript.Game.Coins >= turret.GetComponent<MissleLauncherScript> ().turret.Upgradecost)
+            {
+                SoundManagerScript.playsound("upgrade");
+                GameManagerScript.Game.Coins -= turret.GetComponent<MissleLauncherScript> ().turret.Upgradecost;
 				turret.GetComponent<MissleLauncherScript> ().turret.UpgradeTurret ();
 			}
 			return;
@@ -95,7 +100,8 @@ public class TurretGroundScript : MonoBehaviour {
 		if (turret.GetComponent<LaserTurretScript>() != null) {
 			if (GameManagerScript.Game.Coins >= turret.GetComponent<LaserTurretScript> ().turret.Upgradecost) 
 			{
-				GameManagerScript.Game.Coins -= turret.GetComponent<LaserTurretScript> ().turret.Upgradecost;
+                SoundManagerScript.playsound("upgrade");
+                GameManagerScript.Game.Coins -= turret.GetComponent<LaserTurretScript> ().turret.Upgradecost;
 				turret.GetComponent<LaserTurretScript> ().turret.UpgradeTurret ();
 				//turret.GetComponent<LaserTurretScript> ().upgrade ();
 				turret.GetComponent<LaserTurretScript> ().laserbullet.Power = turret.GetComponent<LaserTurretScript> ().turret.attack;

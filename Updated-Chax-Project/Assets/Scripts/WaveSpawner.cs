@@ -12,7 +12,6 @@ public class WaveSpawner : MonoBehaviour
     private GameObject FlyEnemyPrefab;
 
     public Text leftfornextround;
-
     public float TimeBetweenWaves=5f;
     private float countdown=2f;
     public static int wavenumber=0;
@@ -20,7 +19,9 @@ public class WaveSpawner : MonoBehaviour
     public Transform FlyingSpawnPoint;
     public void Start()
     {
-      wavenumber = 1;
+        SoundManagerScript.playsound("Ticker");
+
+        wavenumber = 1;
     }
     void Update()
     {
@@ -37,6 +38,11 @@ public class WaveSpawner : MonoBehaviour
         }
         countdown -= Time.deltaTime;
         leftfornextround.text = (Mathf.Ceil( countdown ) ).ToString();
+  //      InvokeRepeating("Sound", 0.001f, 10f);
+    }
+    void Sound()
+    {
+    //    SoundManagerScript.playsound("Ticker");
     }
      IEnumerator SpawnWave()
     {
