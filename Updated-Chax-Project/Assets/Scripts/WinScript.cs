@@ -9,6 +9,7 @@ public class WinScript : MonoBehaviour {
 	void OnEnable()
     {
         wavenumbers.text = (GameManagerScript.Game.WavesPassed).ToString();
+        
         Time.timeScale = 0f;
     }
     public void Menu()

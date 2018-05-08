@@ -7,13 +7,17 @@ public abstract class EnemyBaseScript : MonoBehaviour {
     [SerializeField]
     protected Transform target;
 	public Image healthBar;
+    bool killed = false;
     public void hitted(int damage)
     {
         enemy.Health -= damage;
 		healthBar.fillAmount =  enemy.Health / enemy.MainHealth ;
 
-        if (enemy.Health <= 0)
+        if (killed != true && enemy.Health <= 0)
         {
+            killed = true;
+            GameManagerScript.Game.Kills++;
+            GameManagerScript.Game.Score += enemy.Score;
             GameManagerScript.Game.EnemiesAlive--;
             GameManagerScript.Game.Coins += enemy.KillReward;
             SoundManagerScript.playsound("Destroyed");
@@ -22,6 +26,7 @@ public abstract class EnemyBaseScript : MonoBehaviour {
     }
     public void Slow(float amount)
     {
+        //if (enemy.CurrentSpeed==enemy.Speed)
         enemy.CurrentSpeed =enemy.Speed *amount;
     }
     public abstract void Move();

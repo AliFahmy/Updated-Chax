@@ -6,18 +6,6 @@ public class BaseBuilding : Buildings {
 
 	protected int MainHealth;
 	protected int CurrentHealth;
-	protected int RepairCost;
-    public int repairCost
-    {
-        get
-        {
-            return RepairCost;
-        }
-        set
-        {
-            RepairCost = value;
-        }
-    }
 
     public int currentHealth
     {
@@ -45,12 +33,12 @@ public class BaseBuilding : Buildings {
     public BaseBuilding()
     {
         MainHealth = CurrentHealth=0;
-        RepairCost = 0;
+        
     }
     public BaseBuilding(int H )
     {
         MainHealth = CurrentHealth = H;
-        RepairCost = 0;
+        
     }
     public void Repair()
     {

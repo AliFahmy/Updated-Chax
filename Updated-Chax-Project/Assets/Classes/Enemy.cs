@@ -9,12 +9,23 @@ public abstract class Enemy  {
     private float mainHealth;
     private int killReward;
     private int level;
-    
-    
+    private int score;
+
+    public int Score
+    {
+        get
+        {
+            return score;
+        }
+        set
+        {
+            score = value;
+        }
+    }
     public Enemy()
     {
         level = 0;
-       currentspeed= speed = 0;
+        currentspeed= speed = 0;
         health = 0f;
         mainHealth = 0;
         killReward = 0;
