@@ -14,11 +14,13 @@ public class WinScript : MonoBehaviour {
     }
     public void Menu()
     {
+        Time.timeScale = 1f;
         GameManagerScript.GameEnded = true;
         SceneManager.LoadScene("MainMenuScene");
     }
     public void Retry()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }

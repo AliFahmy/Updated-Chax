@@ -18,7 +18,7 @@ public class GameOverScript : MonoBehaviour
     }
     public void Menu()
     {
-        GameManagerScript.GameEnded = true;
+        //GameManagerScript.GameEnded = true;
         SceneManager.LoadScene("MainMenuScene");
     }
 	

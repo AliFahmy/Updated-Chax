@@ -31,11 +31,13 @@ public class PauseMenu : MonoBehaviour {
     }
     public void Retry()
     {
+        Time.timeScale = 1f;
         Toggle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);       
     }
     public void Menu()
     {
+        Time.timeScale = 1f;
         Toggle();
         SceneManager.LoadScene("MainMenuScene");
     }

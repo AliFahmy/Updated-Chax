@@ -3769,10 +3769,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverUI: {fileID: 393692162}
   startingprop:
-    startingCoins: 1000
-    startingLives: 50
-    StartingEnemyLevel: 1
-    WavesToWin: 10
+    startingCoins: 500
+    startingLives: 30
+    StartingEnemyLevel: 6
+    WavesToWin: 30
 --- !u!114 &284265931
 MonoBehaviour:
   m_ObjectHideFlags: 0

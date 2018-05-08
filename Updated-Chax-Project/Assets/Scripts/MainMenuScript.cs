@@ -8,7 +8,8 @@ public class MainMenuScript : MonoBehaviour {
 
     void Start()
 	{
-		leveltoload = "x";
+        Time.timeScale = 1f;
+        leveltoload = "x";
 	}
 	public void Level1()
 	{
@@ -29,7 +30,8 @@ public class MainMenuScript : MonoBehaviour {
 	}
 	public void play()
 	{
-		SceneManager.LoadScene (leveltoload);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene (leveltoload);
 	}
 
     public void Exit()
