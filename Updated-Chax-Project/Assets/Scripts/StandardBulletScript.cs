@@ -36,7 +36,7 @@ public class StandardBulletScript : MonoBehaviour {
         GameObject EffectIns = (GameObject)Instantiate(Impacteffect, transform.position, transform.rotation);
         Destroy(EffectIns.gameObject, 2f);
         damage(target.transform);
-        Debug.Log("Destroyed");
+        
         Destroy(gameObject);
     }
     void damage(Transform todamage)

@@ -31,5 +31,10 @@ public class MainMenuScript : MonoBehaviour {
 	{
 		SceneManager.LoadScene (leveltoload);
 	}
-    
+
+    public void Exit()
+    {
+        Debug.Log("quit");
+        Application.Quit();
+    }
 }
