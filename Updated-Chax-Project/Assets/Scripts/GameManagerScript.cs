@@ -20,12 +20,14 @@ public class GameManagerScript : MonoBehaviour {
     gameProperites startingprop;
     
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         //startingprop = new gameProperites();
         Game = new GameClass();
         Game.Coins = startingprop.startingCoins;
         Game._Lives = startingprop.startingLives;
         WaveSpawner.EnemyStartLevel = startingprop.StartingEnemyLevel;
+        WaveSpawner.winwaves = startingprop.WavesToWin;
         GameEnded = false;
 	}
 	

@@ -11,13 +11,16 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private GameObject FlyEnemyPrefab;
 
+    public static int winwaves=100;
+
     public Text leftfornextround;
     public float TimeBetweenWaves=5f;
     private float countdown=2f;
-    public static int wavenumber=0;
+
+    public static int wavenumber=1;
     public Transform GroundSpawnPoint;
     public Transform FlyingSpawnPoint;
-    
+    public GameObject WinUI;
     public static int EnemyStartLevel = 0;
     
     public void Start()
@@ -27,10 +30,21 @@ public class WaveSpawner : MonoBehaviour
     }
     void Update()
     {
-        //Sound();
+        
+        
         if (GameManagerScript.Game.EnemiesAlive>0)
         {
+
             return;
+        }
+        else
+        {
+            if (wavenumber > winwaves)
+            {
+                WinUI.SetActive(true);
+            }
+            
+
         }
 
         if (countdown <= 0)
@@ -45,7 +59,7 @@ public class WaveSpawner : MonoBehaviour
         }
         countdown -= Time.deltaTime;
         leftfornextround.text = (Mathf.Ceil( countdown ) ).ToString();
-
+        
     }
     void Sound()
     {
@@ -53,6 +67,9 @@ public class WaveSpawner : MonoBehaviour
     }
      IEnumerator SpawnWave()
     {
+        
+
+
         for (int i = 0; i < wavenumber; i++)
         {
 
@@ -69,9 +86,10 @@ public class WaveSpawner : MonoBehaviour
             SpawnFlyingEnemy(FlyEnemyPrefab);
             yield return new WaitForSeconds(0.5f);
         }
-		GameManagerScript.Game.WavesPassed++;
+        GameManagerScript.Game.WavesPassed++;
+
         wavenumber++;
-        
+
     }
     void SpawnGroundEnemy(GameObject tospawn)
     {

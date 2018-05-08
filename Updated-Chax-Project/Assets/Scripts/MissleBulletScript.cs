@@ -48,7 +48,7 @@ public class MissleBulletScript : MonoBehaviour {
         // damage all enemy near but the target and the target itself
         Explode();
 
-        Debug.Log("missle shooted");
+
         // destory the missle
         Destroy(gameObject);
     }
